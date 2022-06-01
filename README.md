@@ -1,5 +1,4 @@
-# meetings-AKQA
-Test AQKA - 17 May 2022   
+# meetings-ScheuleTime
 
 1) Unzip the .ZIP file  
 2) 2) Import into IntelliJ as an existing project  
