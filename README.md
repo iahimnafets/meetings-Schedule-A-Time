@@ -1,20 +1,6 @@
 # meetings-ScheuleTime
 
-1) Unzip the .ZIP file  
-2) 2) Import into IntelliJ as an existing project  
-3) 3) Open the "terminal" tab in IntelliJ and run the command:     
-4)  mvn clean install 
-5)   5) Open the class: MeetingsApplication and launch the application  
-6)   6) Open in browser and paste this string: 
-7)    http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/  
-8)    7) Now you can test via swagger  
-9)    
-10)    
-11)    See this movie for instalation and tests :   https://youtu.be/Sw4tlJylNXY  
-12)    
-13)    
-14)    
-15)    
+  
 
 Your employer has an existing system for employees to submit booking requests for meetings in the
 boardroom. Your employer has now asked you to implement a system for processing batches of
