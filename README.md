@@ -20,11 +20,15 @@ Your employer has an existing system for employees to submit booking requests fo
 boardroom. Your employer has now asked you to implement a system for processing batches of
 booking requests.
 Input
-Your processing system must process input as text. The first line of the input text represents the
-company office hours, in 24 hour clock format, and the remainder of the input represents individual
+Your processing system must process input as text. The first 
+line of the input text represents the
+company office hours, in 24 hour clock format, and the remainder of 
+the input represents individual
 booking requests. Each booking request is in the following format.
+
 [request submission time, in the format YYYY-MM-DD HH:MM:SS] [employee id]
 [meeting start time, in the format YYYY-MM-DD HH:MM] [meeting duration in hours]
+
 A sample text input follows, to be used in your solution.
 
 
