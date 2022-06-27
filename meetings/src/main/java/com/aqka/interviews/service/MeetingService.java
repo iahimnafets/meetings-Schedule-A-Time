@@ -12,7 +12,7 @@ import java.util.*;
 
 @Service
 @Slf4j
-public class MeetingService {
+public final class MeetingService {
 
     @Autowired
     private StoreData storeData;
@@ -25,14 +25,20 @@ public class MeetingService {
     public void addWorkTime( String timeStart, String timeEnd ){
         log.info("addWorkTime-RUN timeStart:{}  timeEnd: {}", timeStart, timeEnd );
 
-        if(Objects.isNull (timeStart ) || timeStart.equals("") || timeStart.length() < 4 ||
-                Objects.isNull (timeEnd ) || timeEnd.equals("") || timeEnd.length() < 4
+         if(Objects.isNull (timeStart ) || timeStart.equals("") || timeStart.length() != 4 ||
+            Objects.isNull (timeEnd ) || timeEnd.equals("") || timeEnd.length() != 4 ||
+              !MeetingUtil.isStringInt(timeStart) ||  !MeetingUtil.isStringInt(timeEnd)
           ){
             throw new ApiRequestException("Time inserted wrong");
         }
+        int tStart = new Integer(timeStart).intValue();
+        int tEnd  = new Integer(timeEnd).intValue();
+        if(tEnd >= tStart){
+            throw new ApiRequestException("Time inserted wrong, Time-Start need to be more than Time-End");
+        }
         WorkTime workTime = new WorkTime();
-        workTime.setTimeStart( new Integer(timeStart).intValue() );
-        workTime.setTimeEnd( new Integer(timeEnd).intValue() );
+        workTime.setTimeStart( tStart );
+        workTime.setTimeEnd( tEnd );
 
         storeData.setWorkTime(workTime);
         log.info("addEvent-End ");
@@ -114,4 +120,5 @@ public class MeetingService {
         log.info("getAllMeetings-RUN " );
         return storeData.getAllMeetings();
     }
+
 }
