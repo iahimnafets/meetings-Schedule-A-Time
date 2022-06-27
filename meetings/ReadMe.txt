@@ -17,3 +17,8 @@
 http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
 
 7) Now you can test via swagger
+
+8) Installation and Test
+    
+    https://www.youtube.com/watch?v=Sw4tlJylNXY
+    
