@@ -52,17 +52,17 @@ output.
 16:00 17:00 EMP004
 
 Constraints
- No part of a meeting may fall outside office hours.
- Meetings may not overlap.
- The booking submission system only allows one submission at a time, so submission times
+No part of a meeting may fall outside office hours.
+Meetings may not overlap.
+The booking submission system only allows one submission at a time, so submission times
 are guaranteed to be unique.
- Bookings must be processed in the chronological order in which they were submitted.
- The ordering of booking submissions in the supplied input is not guaranteed.
+Bookings must be processed in the chronological order in which they were submitted.
+The ordering of booking submissions in the supplied input is not guaranteed.
 
 
 The current requirements make no provision for alerting users of failed bookings; it is up to
 the user to confirm that their booking was successful.
- Although the system that you produce may open and parse a text file for input, this is not part
+Although the system that you produce may open and parse a text file for input, this is not part
 of the requirements. As long as the input text is in the correct format, the method of input is up
 to the developer.
 
