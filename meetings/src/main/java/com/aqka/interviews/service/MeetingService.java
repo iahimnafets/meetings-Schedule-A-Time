@@ -33,7 +33,7 @@ public final class MeetingService {
         }
         int tStart = new Integer(timeStart).intValue();
         int tEnd  = new Integer(timeEnd).intValue();
-        if(tEnd >= tStart){
+        if(tStart >= tEnd){
             throw new ApiRequestException("Time inserted wrong, Time-Start need to be more than Time-End");
         }
         WorkTime workTime = new WorkTime();
