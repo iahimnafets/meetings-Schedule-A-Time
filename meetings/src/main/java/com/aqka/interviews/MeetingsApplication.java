@@ -10,10 +10,6 @@ public class MeetingsApplication {
 
 	/**
 	 *
-	 * Test for: AKQA - Test
-	 * by Mihai Stefan 17 May 2022
-	 *
-	 *
 	 * @param args
 	 */
 	public static void main(String[] args) {

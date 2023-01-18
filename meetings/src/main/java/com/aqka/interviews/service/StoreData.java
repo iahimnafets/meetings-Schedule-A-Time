@@ -16,9 +16,12 @@ public class StoreData {
     private WorkTime workTime;
     private HashMap<Date, List<MeetingDTO>> meetings = new HashMap<>();
 
-
+    /**
+     * Check if the time is available for the meeting
+     * @param meetingNew
+     * @return
+     */
     public boolean timeAvailable(MeetingDTO meetingNew){
-        //String dateMeeting = MeetingUtil.getDateFormatString( meetingNew.getTimeStart(), MeetingUtil.ddMMyyyy );
         Date dateMeeting = MeetingUtil.truncateTime( meetingNew.getTimeStart() );
 
         if(! MeetingUtil.checkIfInWorkingHours(  workTime , meetingNew )  ){

@@ -29,7 +29,7 @@ public final class MeetingService {
             Objects.isNull (timeEnd ) || timeEnd.equals("") || timeEnd.length() != 4 ||
               !MeetingUtil.isStringInt(timeStart) ||  !MeetingUtil.isStringInt(timeEnd)
           ){
-            throw new ApiRequestException("Time inserted wrong");
+            throw new ApiRequestException("Time inserted wrong, we expect 4 digits");
         }
         int tStart = new Integer(timeStart).intValue();
         int tEnd  = new Integer(timeEnd).intValue();
@@ -64,15 +64,17 @@ public final class MeetingService {
         }
         MeetingDTO meetingDTO = buildMeetingDTO(meetingRequest);
 
-        if(storeData.timeAvailable(meetingDTO)){
-            storeData.addMeeting( meetingDTO );
+        synchronized (this) {
+            if (storeData.timeAvailable(meetingDTO)) {
+                storeData.addMeeting(meetingDTO);
+            }
         }
         log.info("addNewMeeting-end" );
     }
 
 
 
-    public MeetingDTO  buildMeetingDTO(MeetingRequest meetingRequest){
+    private MeetingDTO  buildMeetingDTO(MeetingRequest meetingRequest){
         MeetingDTO meetingDTO = new MeetingDTO();
 
         //2011-03-17 10:17:06 EMP001
